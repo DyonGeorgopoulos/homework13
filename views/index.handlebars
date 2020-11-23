@@ -1,0 +1,43 @@
+    <div class="container-fluid d-flex flex-column align-items-center justify-content-center m-0" id="wrapper">
+        <!-- Header -->
+        <div class="row text-center">
+            <div class="col">
+                <h1 id="heading">"Eat-Da-Burger"</h1>
+            </div>
+        </div>     
+   
+    <div class="form-group">
+        <label for="exampleInputEmail1">Enter Burger</label>
+        <input type="burger" class="form-control" id="newBurger" aria-describedby="burger">
+    </div>
+
+
+    <div class="row mb-5 mt-0">
+        <div class="col">
+            <h4> Click on the plate to devour burgers</h4>
+        </div>
+    </div>
+
+    <div class="row d-flex align-items-center justify-content-center">
+        <div class="col-auto">
+            <ul class="list text-center" id="created-list">
+            <li class="mid-heading">Burgers</li>
+            {{#each burgers}}
+                {{#unless devoured}}
+            <li class="mt-2"><span class="mr-1 burger-name">{{burger_name}}</span><button class="btn devour-btn"></button></li>
+                {{/unless}}
+            {{/each}}
+        </ul>
+        </div>
+        <div class="col-auto">
+            <ul class="list text-center" id="devoured-list">
+                <li class="mid-heading">Devoured</li>
+                {{#each burgers}}
+                    {{#if devoured}}
+                <li class="mt-2">{{burger_name}}</li>
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
